@@ -9,11 +9,13 @@ namespace DownloadsCleaningService
     {
         private readonly Timer timer;
 
+
         public Cleaner()
         {
             timer = new Timer(1000 * 60 * 60 * 24) { AutoReset = true };
             timer.Elapsed += OnTimeElapsed;
         }
+
 
         private void OnTimeElapsed(object sender, ElapsedEventArgs e)
         {
@@ -31,10 +33,12 @@ namespace DownloadsCleaningService
             }
         }
 
+
         public void Start()
         {
             timer.Start();
         }
+
 
         public void Stop()
         {

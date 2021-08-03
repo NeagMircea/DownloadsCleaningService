@@ -16,8 +16,8 @@ namespace DownloadsCleaningService
                     s.WhenStopped(cleaner => cleaner.Stop());
                 });
 
-                x.StartAutomatically();
-                x.RunAsLocalSystem();            
+                x.RunAsLocalSystem();
+                x.StartAutomaticallyDelayed();
                 x.SetServiceName("DownloadsCleanerService");
                 x.SetDisplayName("Downloads Cleaner Service");
                 x.SetDescription("Checks and cleans Downloads folder of files older than a week once a day.");
